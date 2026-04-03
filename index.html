@@ -3,240 +3,225 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Special for Ocacaaaa 🌸</title>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Caveat:wght@700&display=swap" rel="stylesheet">
+    <title>Khusus Buat Ocacaaaa! 👀💖</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Pacifico&display=swap" rel="stylesheet">
     <style>
         :root {
-            --pink-soft: #ffdee9;
-            --pink-bold: #ffb7c5;
-            --lavender: #b597f6;
+            --cream: #fffaf0;
+            --pink-soft: #ffcad4;
+            --pink-bucin: #ff99ac;
+            --blue-soft: #bde0fe;
+            --main-font: 'Fredoka', sans-serif;
+            --title-font: 'Pacifico', cursive;
         }
 
         body {
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(135deg, var(--pink-soft) 0%, #b5fffc 100%);
-            font-family: 'Quicksand', sans-serif;
-            color: #444;
+            margin: 0; padding: 0;
+            background-color: var(--cream);
+            font-family: var(--main-font);
+            color: #555;
             overflow-x: hidden;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            display: flex; flex-direction: column; align-items: center;
         }
 
-        /* Animasi Latar Belakang */
-        .snow-container {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            pointer-events: none;
-            z-index: 0;
+        /* Latar Belakang Interaktif */
+        #mata-pengamat {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none; z-index: 0;
         }
 
-        /* Hero Section */
-        .container {
-            max-width: 500px;
-            width: 90%;
-            margin: 50px auto;
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(10px);
-            padding: 30px;
-            border-radius: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        /* Container Utama */
+        .main-card {
+            max-width: 450px; width: 90%;
+            margin: 60px auto;
+            background: rgba(255, 255, 255, 0.9);
+            border: 4px dashed var(--pink-soft);
+            padding: 40px 20px;
+            border-radius: 40px;
+            box-shadow: 0 15px 0 var(--pink-soft);
             text-align: center;
-            position: relative;
-            z-index: 1;
+            position: relative; z-index: 1;
         }
 
-        .profile-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            border: 5px solid white;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
+        /* Bagian Atas/Header */
+        .top-section { margin-bottom: 30px; position: relative; }
+        
+        /* Stiker Kucing Pengamat */
+        .kucing-monitor {
+            width: 120px;
+            transition: transform 0.3s ease-in-out;
         }
+        .kucing-monitor:hover { transform: scale(1.1) rotate(-5deg); }
 
-        .profile-img:hover {
-            transform: scale(1.1) rotate(5deg);
-        }
-
+        /* Teks Judul */
         h1 {
-            font-family: 'Caveat', cursive;
+            font-family: var(--title-font);
             font-size: 3em;
-            color: #d63384;
+            color: var(--pink-bucin);
             margin: 10px 0;
+            text-shadow: 2px 2px 0 #fff, 4px 4px 0 var(--blue-soft);
         }
 
-        .badge {
-            background: var(--lavender);
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.8em;
-            display: inline-block;
-            margin-bottom: 20px;
-        }
+        .halo-teks { font-size: 1.1em; color: #888; margin-top: -10px; }
 
-        .message-box {
+        /* Konsep Utama: "Garda Terdepan" */
+        .konsep-section {
             background: white;
+            border-radius: 25px;
             padding: 20px;
-            border-radius: 20px;
-            margin: 20px 0;
-            font-style: italic;
-            border-left: 5px solid var(--pink-bold);
+            margin: 25px 0;
+            border: 2px solid var(--blue-soft);
+            position: relative;
         }
 
-        /* Bagian "Waktuku" Interaktif */
-        .time-box {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            margin-top: 20px;
+        .pangkat-badge {
+            position: absolute; top: -15px; left: 50%;
+            transform: translateX(-50%);
+            background: var(--blue-soft);
+            color: white; padding: 5px 15px;
+            border-radius: 20px; font-weight: bold; font-size: 0.8em;
+            text-transform: uppercase; letter-spacing: 1px;
         }
 
-        .stat-card {
-            background: rgba(255, 183, 197, 0.3);
-            padding: 15px;
-            border-radius: 15px;
-        }
+        .pesan-utama { font-size: 1.2em; line-height: 1.6em; font-weight: 600; color: #666; }
+        .bucin-highlighter { color: var(--pink-bucin); border-bottom: 2px solid var(--pink-soft); }
 
-        .stat-card span {
-            display: block;
-            font-weight: bold;
-            font-size: 1.2em;
+        /* Statistik Lucu */
+        .statistik-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 25px;
         }
-
-        /* Tombol Surprise */
-        .btn-surprise {
-            background: linear-gradient(to right, #ff9a9e, #fad0c4);
-            border: none;
-            padding: 15px 30px;
-            border-radius: 50px;
-            color: white;
-            font-weight: bold;
-            font-size: 1.1em;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(255, 154, 158, 0.4);
-            transition: 0.3s;
-            margin-top: 20px;
-            width: 100%;
+        .stat-item {
+            background: var(--cream);
+            padding: 15px; border-radius: 15px;
+            border: 1px solid var(--pink-soft);
         }
+        .stat-icon { font-size: 1.8em; margin-bottom: 5px; }
+        .stat-angka { font-size: 1.3em; font-weight: bold; color: var(--pink-bucin); }
+        .stat-label { font-size: 0.8em; color: #999; text-transform: uppercase; }
 
-        .btn-surprise:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(255, 154, 158, 0.6);
+        /* Tombol Absen */
+        .absen-btn {
+            background-color: var(--pink-bucin);
+            color: white; border: none;
+            padding: 18px 30px; border-radius: 50px;
+            font-family: var(--main-font); font-weight: 600; font-size: 1.1em;
+            cursor: pointer; width: 100%; margin-top: 30px;
+            box-shadow: 0 6px 0 #e07a8c;
+            transition: all 0.2s;
         }
+        .absen-btn:hover { box-shadow: 0 4px 0 #e07a8c; transform: translateY(2px); }
+        .absen-btn:active { box-shadow: 0 0px 0 #e07a8c; transform: translateY(6px); }
 
-        /* Pop up */
-        #popup {
-            display: none;
-            position: fixed;
-            top: 50%; left: 50%;
-            transform: translate(-50%, -50%);
-            background: white;
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 0 100px rgba(0,0,0,0.5);
-            z-index: 100;
-            text-align: center;
-            width: 80%;
-            max-width: 400px;
-        }
-
+        /* Pop-up Kejutan */
         .overlay {
-            display: none;
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.5);
-            z-index: 99;
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.4); z-index: 99; backdrop-filter: blur(5px);
+        }
+        #popup {
+            display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            background: white; padding: 30px; border-radius: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2); z-index: 100;
+            text-align: center; width: 85%; max-width: 350px;
+            border: 5px solid var(--blue-soft);
         }
 
-        footer {
-            margin: 30px 0;
-            font-size: 0.8em;
-            color: #888;
-        }
+        /* Footer */
+        footer { margin: 40px 0; font-size: 0.8em; color: #aaa; }
+
     </style>
 </head>
 <body>
 
-    <div class="snow-container" id="snow"></div>
+    <div id="mata-pengamat"></div>
 
-    <div class="container">
-        <img src="https://api.dicebear.com/7.x/adventurer/svg?seed=Ocaca" alt="Ocaca" class="profile-img">
-        
-        <div class="badge">Teruntuk: Ocacaaaa ✨</div>
-        <h1>Hi, Penyemangatku!</h1>
-        
-        <div class="message-box">
-            "Ada banyak orang di dunia ini, tapi cuma satu yang bisa buat duniaku jadi lebih cerah cuma lewat senyumnya. Dan itu kamu."
+    <div class="main-card">
+        <div class="top-section">
+            <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3Y4MGFidXN0N3lyYXZ4YmQwa250ZnF1Ym95ZmEwdmFpZW9mZWh0OSZjdD1z/kIRSvV3cbaV554S4Q5/giphy.gif" alt="Kucing Mengamat" class="kucing-monitor">
+            <h1>Ocacaaaa!</h1>
+            <p class="halo-teks">Ciee yang lagi diperhatiin... 👀</p>
         </div>
 
-        <div class="time-box">
-            <div class="stat-card">
-                <span>∞</span>
-                Waktuku Untukmu
+        <div class="konsep-section">
+            <div class="pangkat-badge">Laporan Situasi</div>
+            <p class="pesan-utama">
+                Cuma mau bilang kalau <span class="bucin-highlighter">aku selalu ada di sini</span>. Tenang, bukan sebagai hantu, tapi sebagai <span class="bucin-highlighter">Garda Terdepan Pengamat Kebahagiaan kamu</span>. 
+                <br><br>
+                Tugas utamaku? Memastikan kamu tetap senyum hari ini! 😊
+            </p>
+        </div>
+
+        <div class="statistik-grid">
+            <div class="stat-item">
+                <div class="stat-icon">🔭</div>
+                <div class="stat-angka">24/7</div>
+                <div class="stat-label">Radar Bucin Aktif</div>
             </div>
-            <div class="stat-card">
-                <span>100%</span>
-                Semangatku Dari Kamu
+            <div class="stat-item">
+                <div class="stat-icon">💖</div>
+                <div class="stat-angka">∞</div>
+                <div class="stat-label">Stok Dukungan</div>
             </div>
         </div>
 
-        <p style="margin-top: 25px; font-size: 0.9em;">
-            Makasih ya udah jadi alasan aku buat terus semangat setiap hari! 
+        <p style="margin-top: 25px; font-size: 0.9em; font-style: italic; color: #888;">
+            "Waktuku mungkin berjalan, tapi pandanganku seringnya berhenti di kamu. Hehe."
         </p>
 
-        <button class="btn-surprise" onclick="showSurprise()">Klik Untuk Pesan Rahasia 💌</button>
+        <button class="absen-btn" onclick="absenCinta()">TAP UNTUK ABSEN HADIR! ✨</button>
     </div>
 
-    <div class="overlay" id="overlay" onclick="closeSurprise()"></div>
+    <div class="overlay" id="overlay" onclick="tutupPopup()"></div>
     <div id="popup">
-        <h2 style="font-family: 'Caveat', cursive; color: #ff69b4;">Pesan untuk Ocacaaaa:</h2>
-        <p>Jangan pernah lupa kalau kamu itu berharga. Capek boleh, tapi jangan nyerah ya? Aku bakal selalu jadi tim hore nomor satu kamu! 🥳</p>
-        <button onclick="closeSurprise()" style="border:none; background: #eee; padding: 10px 20px; border-radius: 10px; cursor: pointer;">Tutup</button>
+        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExODFidmd2dmM2MGh4ZXZxcWw2Y2Z0ZGt4bjJjdG93ZmYxbHBsMTk4ayZjdD1z/L5w2R3D5d5aT8Qid3v/giphy.gif" width="100">
+        <h2 style="font-family: var(--title-font); color: var(--pink-bucin);">Absen Berhasil! 🎉</h2>
+        <p>Laporan diterima! <br> Aku bakal terus 'patroli' di sekitar kebahagiaan kamu ya, Ocacaaaa. Semangat terus!</p>
+        <button onclick="tutupPopup()" style="border:none; background: var(--cream); padding: 10px 20px; border-radius: 10px; cursor: pointer; font-family: var(--main-font); margin-top: 15px;">Oke, Siap! 👋</button>
     </div>
 
-    <footer>Made with ✨ for Ocacaaaa</footer>
+    <footer>The Official Ocaca-Watcher Division</footer>
 
     <script>
-        // Efek Salju Sederhana
-        const snowContainer = document.getElementById('snow');
-        const particles = ['🌸', '✨', '💖', '⭐'];
+        // Efek Latar Belakang: Mata Kecil yang Berkedip
+        const container = document.getElementById('mata-pengamat');
+        const symbols = ['👀', '✨', '💖', '▫️'];
 
-        function createSnow() {
-            const leaf = document.createElement('div');
-            leaf.style.position = 'fixed';
-            leaf.style.top = '-20px';
-            leaf.style.left = Math.random() * 100 + 'vw';
-            leaf.style.fontSize = (Math.random() * 10 + 10) + 'px';
-            leaf.innerText = particles[Math.floor(Math.random() * particles.length)];
-            leaf.style.opacity = Math.random();
-            leaf.style.transition = `transform ${Math.random() * 3 + 2}s linear, top ${Math.random() * 3 + 2}s linear`;
+        function createWatcher() {
+            const watcher = document.createElement('div');
+            watcher.style.position = 'fixed';
+            watcher.style.left = Math.random() * 100 + 'vw';
+            watcher.style.top = Math.random() * 100 + 'vh';
+            watcher.style.fontSize = (Math.random() * 10 + 10) + 'px';
+            watcher.innerText = symbols[Math.floor(Math.random() * symbols.length)];
+            watcher.style.opacity = Math.random() * 0.5; // Biar nggak terlalu ramai
+            watcher.style.transition = 'opacity 1s ease-in-out';
             
-            snowContainer.appendChild(leaf);
+            container.appendChild(watcher);
 
-            setTimeout(() => {
-                leaf.style.transform = `translateX(${Math.random() * 100 - 50}px) rotate(${Math.random() * 360}deg)`;
-                leaf.style.top = '110vh';
-            }, 100);
+            // Efek berkedip
+            setInterval(() => {
+                watcher.style.opacity = watcher.style.opacity == 0 ? Math.random() * 0.5 : 0;
+            }, Math.random() * 2000 + 1000);
 
-            setTimeout(() => {
-                leaf.remove();
-            }, 5000);
+            // Hapus setelah beberapa lama agar tidak lag
+            setTimeout(() => { watcher.remove(); }, 15000);
         }
 
-        setInterval(createSnow, 300);
+        // Buat partikel mata-mata setiap sekian detik
+        setInterval(createWatcher, 500);
 
-        // Fungsi Surprise
-        function showSurprise() {
-            document.getElementById('popup').style.display = 'block';
-            document.getElementById('overlay').style.display = 'block';
+        // Fungsi Pop-up
+        const overlay = document.getElementById('overlay');
+        const popup = document.getElementById('popup');
+
+        function absenCinta() {
+            overlay.style.display = 'block';
+            popup.style.display = 'block';
+            // Opsional: Tambahkan suara 'ding' di sini kalau mau
         }
 
-        function closeSurprise() {
-            document.getElementById('popup').style.display = 'none';
-            document.getElementById('overlay').style.display = 'none';
+        function tutupPopup() {
+            overlay.style.display = 'none';
+            popup.style.display = 'none';
         }
     </script>
 </body>
