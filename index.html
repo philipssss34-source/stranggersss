@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special for Ocacaaaa 🌸</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Caveat:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --pink-soft: #ffdee9;
+            --pink-bold: #ffb7c5;
+            --lavender: #b597f6;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, var(--pink-soft) 0%, #b5fffc 100%);
+            font-family: 'Quicksand', sans-serif;
+            color: #444;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Animasi Latar Belakang */
+        .snow-container {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Hero Section */
+        .container {
+            max-width: 500px;
+            width: 90%;
+            margin: 50px auto;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        h1 {
+            font-family: 'Caveat', cursive;
+            font-size: 3em;
+            color: #d63384;
+            margin: 10px 0;
+        }
+
+        .badge {
+            background: var(--lavender);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .message-box {
+            background: white;
+            padding: 20px;
+            border-radius: 20px;
+            margin: 20px 0;
+            font-style: italic;
+            border-left: 5px solid var(--pink-bold);
+        }
+
+        /* Bagian "Waktuku" Interaktif */
+        .time-box {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .stat-card {
+            background: rgba(255, 183, 197, 0.3);
+            padding: 15px;
+            border-radius: 15px;
+        }
+
+        .stat-card span {
+            display: block;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        /* Tombol Surprise */
+        .btn-surprise {
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            color: white;
+            font-weight: bold;
+            font-size: 1.1em;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(255, 154, 158, 0.4);
+            transition: 0.3s;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        .btn-surprise:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 154, 158, 0.6);
+        }
+
+        /* Pop up */
+        #popup {
+            display: none;
+            position: fixed;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 0 100px rgba(0,0,0,0.5);
+            z-index: 100;
+            text-align: center;
+            width: 80%;
+            max-width: 400px;
+        }
+
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 99;
+        }
+
+        footer {
+            margin: 30px 0;
+            font-size: 0.8em;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="snow-container" id="snow"></div>
+
+    <div class="container">
+        <img src="https://api.dicebear.com/7.x/adventurer/svg?seed=Ocaca" alt="Ocaca" class="profile-img">
+        
+        <div class="badge">Teruntuk: Ocacaaaa ✨</div>
+        <h1>Hi, Penyemangatku!</h1>
+        
+        <div class="message-box">
+            "Ada banyak orang di dunia ini, tapi cuma satu yang bisa buat duniaku jadi lebih cerah cuma lewat senyumnya. Dan itu kamu."
+        </div>
+
+        <div class="time-box">
+            <div class="stat-card">
+                <span>∞</span>
+                Waktuku Untukmu
+            </div>
+            <div class="stat-card">
+                <span>100%</span>
+                Semangatku Dari Kamu
+            </div>
+        </div>
+
+        <p style="margin-top: 25px; font-size: 0.9em;">
+            Makasih ya udah jadi alasan aku buat terus semangat setiap hari! 
+        </p>
+
+        <button class="btn-surprise" onclick="showSurprise()">Klik Untuk Pesan Rahasia 💌</button>
+    </div>
+
+    <div class="overlay" id="overlay" onclick="closeSurprise()"></div>
+    <div id="popup">
+        <h2 style="font-family: 'Caveat', cursive; color: #ff69b4;">Pesan untuk Ocacaaaa:</h2>
+        <p>Jangan pernah lupa kalau kamu itu berharga. Capek boleh, tapi jangan nyerah ya? Aku bakal selalu jadi tim hore nomor satu kamu! 🥳</p>
+        <button onclick="closeSurprise()" style="border:none; background: #eee; padding: 10px 20px; border-radius: 10px; cursor: pointer;">Tutup</button>
+    </div>
+
+    <footer>Made with ✨ for Ocacaaaa</footer>
+
+    <script>
+        // Efek Salju Sederhana
+        const snowContainer = document.getElementById('snow');
+        const particles = ['🌸', '✨', '💖', '⭐'];
+
+        function createSnow() {
+            const leaf = document.createElement('div');
+            leaf.style.position = 'fixed';
+            leaf.style.top = '-20px';
+            leaf.style.left = Math.random() * 100 + 'vw';
+            leaf.style.fontSize = (Math.random() * 10 + 10) + 'px';
+            leaf.innerText = particles[Math.floor(Math.random() * particles.length)];
+            leaf.style.opacity = Math.random();
+            leaf.style.transition = `transform ${Math.random() * 3 + 2}s linear, top ${Math.random() * 3 + 2}s linear`;
+            
+            snowContainer.appendChild(leaf);
+
+            setTimeout(() => {
+                leaf.style.transform = `translateX(${Math.random() * 100 - 50}px) rotate(${Math.random() * 360}deg)`;
+                leaf.style.top = '110vh';
+            }, 100);
+
+            setTimeout(() => {
+                leaf.remove();
+            }, 5000);
+        }
+
+        setInterval(createSnow, 300);
+
+        // Fungsi Surprise
+        function showSurprise() {
+            document.getElementById('popup').style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
+        }
+
+        function closeSurprise() {
+            document.getElementById('popup').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
