@@ -3,220 +3,168 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Khusus Buat Ocacaaaa! 👀💖</title>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Pacifico&display=swap" rel="stylesheet">
+    <title>A Small Space for Ocacaaaa 🌿</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Lora:ital,wght@1,500&display=swap" rel="stylesheet">
     <style>
         :root {
-            --cream: #fffaf0;
-            --pink-soft: #ffcad4;
-            --pink-bucin: #ff99ac;
-            --blue-soft: #bde0fe;
-            --main-font: 'Fredoka', sans-serif;
-            --title-font: 'Pacifico', cursive;
+            --bg-color: #fcfbf7; /* Off-white yang tenang */
+            --text-main: #333333;
+            --text-sub: #666666;
+            --accent: #b4cfb0; /* Hijau sage yang kalem */
+            --accent-soft: #e3ede1;
+            --font-main: 'DM Sans', sans-serif;
+            --font-serif: 'Lora', serif;
         }
 
         body {
             margin: 0; padding: 0;
-            background-color: var(--cream);
-            font-family: var(--main-font);
-            color: #555;
-            overflow-x: hidden;
-            display: flex; flex-direction: column; align-items: center;
-        }
-
-        /* Latar Belakang Interaktif */
-        #mata-pengamat {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            pointer-events: none; z-index: 0;
+            background-color: var(--bg-color);
+            font-family: var(--font-main);
+            color: var(--text-main);
+            display: flex; flex-direction: column; align-items: center; min-height: 100vh;
         }
 
         /* Container Utama */
-        .main-card {
-            max-width: 450px; width: 90%;
-            margin: 60px auto;
-            background: rgba(255, 255, 255, 0.9);
-            border: 4px dashed var(--pink-soft);
-            padding: 40px 20px;
-            border-radius: 40px;
-            box-shadow: 0 15px 0 var(--pink-soft);
-            text-align: center;
-            position: relative; z-index: 1;
-        }
-
-        /* Bagian Atas/Header */
-        .top-section { margin-bottom: 30px; position: relative; }
-        
-        /* Stiker Kucing Pengamat */
-        .kucing-monitor {
-            width: 120px;
-            transition: transform 0.3s ease-in-out;
-        }
-        .kucing-monitor:hover { transform: scale(1.1) rotate(-5deg); }
-
-        /* Teks Judul */
-        h1 {
-            font-family: var(--title-font);
-            font-size: 3em;
-            color: var(--pink-bucin);
-            margin: 10px 0;
-            text-shadow: 2px 2px 0 #fff, 4px 4px 0 var(--blue-soft);
-        }
-
-        .halo-teks { font-size: 1.1em; color: #888; margin-top: -10px; }
-
-        /* Konsep Utama: "Garda Terdepan" */
-        .konsep-section {
+        .main-container {
+            max-width: 480px; width: 90%;
+            margin: 80px auto;
             background: white;
-            border-radius: 25px;
-            padding: 20px;
-            margin: 25px 0;
-            border: 2px solid var(--blue-soft);
-            position: relative;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.03); /* Shadow tipis modern */
+            text-align: center;
+            border: 1px solid #f0f0f0;
         }
 
-        .pangkat-badge {
-            position: absolute; top: -15px; left: 50%;
-            transform: translateX(-50%);
-            background: var(--blue-soft);
-            color: white; padding: 5px 15px;
-            border-radius: 20px; font-weight: bold; font-size: 0.8em;
-            text-transform: uppercase; letter-spacing: 1px;
+        /* Foto/Ilustrasi (Minimalis) */
+        .header-visual {
+            margin-bottom: 30px;
+        }
+        .monitor-icon {
+            font-size: 3.5em; /* Cukup pakai emoji atau ikon minimalis */
+            margin-bottom: 10px;
+            display: block;
         }
 
-        .pesan-utama { font-size: 1.2em; line-height: 1.6em; font-weight: 600; color: #666; }
-        .bucin-highlighter { color: var(--pink-bucin); border-bottom: 2px solid var(--pink-soft); }
-
-        /* Statistik Lucu */
-        .statistik-grid {
-            display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 25px;
+        /* Teks */
+        h1 {
+            font-size: 2.2em; font-weight: 700; color: var(--text-main); margin: 0 0 10px 0;
         }
-        .stat-item {
-            background: var(--cream);
-            padding: 15px; border-radius: 15px;
-            border: 1px solid var(--pink-soft);
+        .name-highlight {
+            color: var(--accent);
         }
-        .stat-icon { font-size: 1.8em; margin-bottom: 5px; }
-        .stat-angka { font-size: 1.3em; font-weight: bold; color: var(--pink-bucin); }
-        .stat-label { font-size: 0.8em; color: #999; text-transform: uppercase; }
+        .subtitle {
+            font-size: 1em; color: var(--text-sub); margin-bottom: 40px; font-weight: 400;
+        }
 
-        /* Tombol Absen */
-        .absen-btn {
-            background-color: var(--pink-bucin);
+        /* Konsep Utama */
+        .concept-box {
+            background: var(--accent-soft);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+        .concept-title {
+            font-size: 0.85em; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px;
+            color: var(--accent); margin-bottom: 15px; display: block;
+        }
+        .main-message {
+            font-family: var(--font-serif); font-size: 1.15em; font-style: italic;
+            line-height: 1.7em; color: var(--text-main);
+        }
+
+        /* Grid Status (Modern) */
+        .status-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 30px;
+        }
+        .status-item {
+            border: 1px solid #eee; padding: 20px; border-radius: 12px; transition: border-color 0.3s;
+        }
+        .status-item:hover { border-color: var(--accent); }
+        .status-value { font-size: 1.5em; font-weight: 700; color: var(--text-main); margin-bottom: 5px; }
+        .status-label { font-size: 0.85em; color: var(--text-sub); text-transform: uppercase; letter-spacing: 1px; }
+
+        /* Tombol Absen (Suportif) */
+        .support-btn {
+            background-color: var(--text-main);
             color: white; border: none;
-            padding: 18px 30px; border-radius: 50px;
-            font-family: var(--main-font); font-weight: 600; font-size: 1.1em;
-            cursor: pointer; width: 100%; margin-top: 30px;
-            box-shadow: 0 6px 0 #e07a8c;
-            transition: all 0.2s;
+            padding: 18px 30px; border-radius: 10px;
+            font-family: var(--font-main); font-weight: 500; font-size: 1em;
+            cursor: pointer; width: 100%;
+            transition: background-color 0.3s, transform 0.2s;
         }
-        .absen-btn:hover { box-shadow: 0 4px 0 #e07a8c; transform: translateY(2px); }
-        .absen-btn:active { box-shadow: 0 0px 0 #e07a8c; transform: translateY(6px); }
+        .support-btn:hover { background-color: #555; transform: translateY(-2px); }
+        .support-btn:active { transform: translateY(1px); }
 
         /* Pop-up Kejutan */
         .overlay {
             display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.4); z-index: 99; backdrop-filter: blur(5px);
+            background: rgba(0,0,0,0.3); z-index: 99; backdrop-filter: blur(3px);
         }
         #popup {
             display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
-            background: white; padding: 30px; border-radius: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2); z-index: 100;
+            background: white; padding: 40px; border-radius: 20px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.1); z-index: 100;
             text-align: center; width: 85%; max-width: 350px;
-            border: 5px solid var(--blue-soft);
         }
 
         /* Footer */
-        footer { margin: 40px 0; font-size: 0.8em; color: #aaa; }
+        footer { margin: 50px 0; font-size: 0.85em; color: #bbb; font-weight: 400; }
 
     </style>
 </head>
 <body>
 
-    <div id="mata-pengamat"></div>
-
-    <div class="main-card">
-        <div class="top-section">
-            <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3Y4MGFidXN0N3lyYXZ4YmQwa250ZnF1Ym95ZmEwdmFpZW9mZWh0OSZjdD1z/kIRSvV3cbaV554S4Q5/giphy.gif" alt="Kucing Mengamat" class="kucing-monitor">
-            <h1>Ocacaaaa!</h1>
-            <p class="halo-teks">Ciee yang lagi diperhatiin... 👀</p>
+    <div class="main-container">
+        <div class="header-visual">
+            <span class="monitor-icon">🌿</span>
+            <h1>For <span class="name-highlight">Ocacaaaa</span>.</h1>
+            <p class="subtitle">Sebuah halaman kecil, hanya untukmu.</p>
         </div>
 
-        <div class="konsep-section">
-            <div class="pangkat-badge">Laporan Situasi</div>
-            <p class="pesan-utama">
-                Cuma mau bilang kalau <span class="bucin-highlighter">aku selalu ada di sini</span>. Tenang, bukan sebagai hantu, tapi sebagai <span class="bucin-highlighter">Garda Terdepan Pengamat Kebahagiaan kamu</span>. 
+        <div class="concept-box">
+            <span class="concept-title">Point of View</span>
+            <p class="main-message">
+                Cuma mau bilang kalau aku selalu ada di sini. Tenang, bukan sebagai hantu, tapi sebagai <span style="font-weight:700; color:var(--accent);">Garda Terdepan Pengamat Kebahagiaan kamu</span>. 
                 <br><br>
-                Tugas utamaku? Memastikan kamu tetap senyum hari ini! 😊
+                Tugas utamaku? Memastikan kamu tetap senyum hari ini.😊
             </p>
         </div>
 
-        <div class="statistik-grid">
-            <div class="stat-item">
-                <div class="stat-icon">🔭</div>
-                <div class="stat-angka">24/7</div>
-                <div class="stat-label">Radar Bucin Aktif</div>
+        <div class="status-grid">
+            <div class="status-item">
+                <div class="status-value">24/7</div>
+                <div class="status-label">Radar Aktif</div>
             </div>
-            <div class="stat-item">
-                <div class="stat-icon">💖</div>
-                <div class="stat-angka">∞</div>
-                <div class="stat-label">Stok Dukungan</div>
+            <div class="status-item">
+                <div class="status-value">∞</div>
+                <div class="status-label">Stok Dukungan</div>
             </div>
         </div>
 
-        <p style="margin-top: 25px; font-size: 0.9em; font-style: italic; color: #888;">
-            "Waktuku mungkin berjalan, tapi pandanganku seringnya berhenti di kamu. Hehe."
-        </p>
-
-        <button class="absen-btn" onclick="absenCinta()">TAP UNTUK ABSEN HADIR! ✨</button>
+        <button class="support-btn" onclick="tampilPesan()">Kirim Tanda Kehadiran 👋</button>
     </div>
 
     <div class="overlay" id="overlay" onclick="tutupPopup()"></div>
     <div id="popup">
-        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExODFidmd2dmM2MGh4ZXZxcWw2Y2Z0ZGt4bjJjdG93ZmYxbHBsMTk4ayZjdD1z/L5w2R3D5d5aT8Qid3v/giphy.gif" width="100">
-        <h2 style="font-family: var(--title-font); color: var(--pink-bucin);">Absen Berhasil! 🎉</h2>
-        <p>Laporan diterima! <br> Aku bakal terus 'patroli' di sekitar kebahagiaan kamu ya, Ocacaaaa. Semangat terus!</p>
-        <button onclick="tutupPopup()" style="border:none; background: var(--cream); padding: 10px 20px; border-radius: 10px; cursor: pointer; font-family: var(--main-font); margin-top: 15px;">Oke, Siap! 👋</button>
+        <h2 style="color: var(--text-main); margin-bottom: 15px;">Laporan Diterima.</h2>
+        <p style="color: var(--text-sub); line-height: 1.6em; margin-bottom: 25px;">
+            Oke, Siap! 👋 Aku bakal terus 'patroli' di sekitar kebahagiaan kamu ya, Ocacaaaa. Semangat terus!
+        </p>
+        <button onclick="tutupPopup()" style="border:none; background: #f0f0f0; padding: 12px 25px; border-radius: 8px; cursor: pointer; color: var(--text-main); font-weight: 500;">Oke.</button>
     </div>
 
-    <footer>The Official Ocaca-Watcher Division</footer>
+    <footer>#DibuatDenganHatiUntukOcacaaaa</footer>
 
     <script>
-        // Efek Latar Belakang: Mata Kecil yang Berkedip
-        const container = document.getElementById('mata-pengamat');
-        const symbols = ['👀', '✨', '💖', '▫️'];
-
-        function createWatcher() {
-            const watcher = document.createElement('div');
-            watcher.style.position = 'fixed';
-            watcher.style.left = Math.random() * 100 + 'vw';
-            watcher.style.top = Math.random() * 100 + 'vh';
-            watcher.style.fontSize = (Math.random() * 10 + 10) + 'px';
-            watcher.innerText = symbols[Math.floor(Math.random() * symbols.length)];
-            watcher.style.opacity = Math.random() * 0.5; // Biar nggak terlalu ramai
-            watcher.style.transition = 'opacity 1s ease-in-out';
-            
-            container.appendChild(watcher);
-
-            // Efek berkedip
-            setInterval(() => {
-                watcher.style.opacity = watcher.style.opacity == 0 ? Math.random() * 0.5 : 0;
-            }, Math.random() * 2000 + 1000);
-
-            // Hapus setelah beberapa lama agar tidak lag
-            setTimeout(() => { watcher.remove(); }, 15000);
-        }
-
-        // Buat partikel mata-mata setiap sekian detik
-        setInterval(createWatcher, 500);
-
         // Fungsi Pop-up
         const overlay = document.getElementById('overlay');
         const popup = document.getElementById('popup');
 
-        function absenCinta() {
+        function tampilPesan() {
             overlay.style.display = 'block';
             popup.style.display = 'block';
-            // Opsional: Tambahkan suara 'ding' di sini kalau mau
         }
 
         function tutupPopup() {
